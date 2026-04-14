@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CBTI 摄影人格测试</title>
+    <meta
+      name="description"
+      content="24 道题测出你的摄影人格类型。看看你更像富士、佳能、尼康、徕卡、苹果，还是徐州老味菜。"
+    />
+    <meta name="application-name" content="CBTI 摄影人格测试" />
+    <meta property="og:site_name" content="CBTI 摄影人格测试" />
+    <meta property="og:title" content="CBTI 摄影人格测试" />
+    <meta
+      property="og:description"
+      content="一个面向摄影圈的轻量人格测试，基于摄影习惯、题材偏好和生活方式生成你的 CBTI 类型。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CBTI 摄影人格测试" />
+    <meta
+      name="twitter:description"
+      content="24 道题测出你的摄影人格类型。看看你更像富士、佳能、尼康、徕卡、苹果，还是徐州老味菜。"
+    />
+    <meta name="twitter:image" content="./og-image.svg" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">CBTI</p>
+        <h1>测一测你到底是哪种摄影人格</h1>
+        <p class="hero-copy">
+          24 道题，测出你更像富士、佳能、尼康、徕卡，还是徐州老味菜。
+        </p>
+        <button class="primary-button" id="start-button" type="button">开始测试</button>
+      </header>
+
+      <main class="app-card">
+        <section class="quiz-panel is-hidden" id="quiz-panel">
+          <div class="progress-row">
+            <span id="progress-text">第 1 / 24 题</span>
+            <span id="progress-percent">4%</span>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+
+          <article class="question-card">
+            <p class="question-tag" id="question-tag">人格习惯</p>
+            <h2 id="question-text"></h2>
+            <div class="option-list" id="option-list"></div>
+          </article>
+
+          <div class="quiz-footer">
+            <button class="secondary-button" id="prev-button" type="button">上一题</button>
+            <button class="primary-button" id="next-button" type="button" disabled>下一题</button>
+          </div>
+        </section>
+
+        <section class="result-panel is-hidden" id="result-panel">
+          <div class="result-hero">
+            <div class="result-identity">
+              <p class="result-kicker" id="result-kicker">你的 CBTI 结果</p>
+              <h2 class="result-title" id="result-title"></h2>
+              <p class="result-subtitle" id="result-subtitle"></p>
+            </div>
+            <aside class="result-badge-card">
+              <p class="badge-label">最高匹配</p>
+              <p class="badge-value" id="result-score">0%</p>
+              <p class="badge-note" id="result-code">CBTI-00</p>
+            </aside>
+          </div>
+
+          <div class="result-grid">
+            <div class="result-summary">
+              <h3>类型画像</h3>
+              <p id="result-description"></p>
+              <div class="highlight-box">
+                <span class="highlight-label">典型题材</span>
+                <p id="result-topics"></p>
+              </div>
+            </div>
+            <div class="result-metrics">
+              <h3>匹配度排行</h3>
+              <div id="ranking-list" class="ranking-list"></div>
+            </div>
+          </div>
+
+          <div class="insight-grid">
+            <article class="insight-card">
+              <h3>人格侧写</h3>
+              <ul id="trait-list"></ul>
+            </article>
+            <article class="insight-card">
+              <h3>高分题材</h3>
+              <ul id="topic-list"></ul>
+            </article>
+          </div>
+
+          <div class="insight-grid insight-grid-wide">
+            <article class="insight-card">
+              <h3>你的优势</h3>
+              <ul id="strength-list"></ul>
+            </article>
+            <article class="insight-card">
+              <h3>容易暴露的小毛病</h3>
+              <ul id="blindspot-list"></ul>
+            </article>
+          </div>
+
+          <div class="detail-grid">
+            <article class="detail-card">
+              <h3>拍摄状态</h3>
+              <p id="result-vibe"></p>
+            </article>
+            <article class="detail-card">
+              <h3>社交媒体气质</h3>
+              <p id="result-social"></p>
+            </article>
+            <article class="detail-card">
+              <h3>最适合的场景</h3>
+              <p id="result-scenes"></p>
+            </article>
+          </div>
+
+          <div class="result-actions">
+            <button class="secondary-button" id="copy-result-button" type="button">复制结果文案</button>
+            <button class="secondary-button" id="copy-link-button" type="button">复制链接</button>
+            <button class="secondary-button" id="share-button" type="button">系统分享</button>
+            <button class="primary-button" id="restart-button" type="button">重新测试</button>
+          </div>
+          <p class="share-feedback is-hidden" id="share-feedback" aria-live="polite"></p>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
