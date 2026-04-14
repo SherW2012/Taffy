@@ -9,8 +9,6 @@ xzlwc-site/
 ├─ index.html
 ├─ styles.css
 ├─ app.js
-├─ favicon.svg
-├─ og-image.svg
 └─ CBTI_需求与题库框架.md
 ```
 
